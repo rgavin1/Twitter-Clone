@@ -1,7 +1,10 @@
 import React from 'react';
-
+import '../Assets/styles/Widgets.css';
+import { TwitterTweetEmbed } from 'react-twitter-embed';
 const Widgets = () => {
-    return <h1>Widgets</h1>
+    return  <div className="widgets">
+                
+            </div>
 }
 
 export default Widgets; 

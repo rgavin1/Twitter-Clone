@@ -1,3 +1,139 @@
-h1 {
-    color: red;
+.sidebar {
+  order: 1;
+  flex: 0.1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+}
+
+/* Twitter Logo */
+.sidebar__twittericon {
+  color: var(--primary-color);
+  font-size: 30px;
+  padding: 13px;
+}
+/* Nav Item */
+.sidebar__navitem {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 10px 0px;
+  cursor: pointer;
+  display: table;
+  border-radius: 100px;
+  background: #fff;
+  color: inherit;
+  transition: all 0.1s ease-out;
+}
+/* Hover */
+.sidebar__navitem:hover {
+  background: var(--primary-hover);
+  color: var(--primary-color);
+}
+.sidebar__navitem.sidebar__navitem--active {
+  color: var(--primary-color);
+}
+/* Nav Item Icon */
+.sidebar__navitem > span:first-of-type {
+  width: 24px;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+}
+.sidebar__navitem > span:first-of-type::before {
+  content: "";
+  background: #ff253a;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 4px;
+  right: 13px;
+  border-radius: 100%;
+}
+.sidebar__navitem > span {
+  padding: 8px 15px;
+}
+/* Tweet Button */
+.sidebar__tweetbtn {
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  padding: 8px 0;
+  border-radius: 100px;
+  max-width: 250px;
+  margin-top: 30px;
+  cursor: pointer;
+  transition: all 0.1s ease-out;
+}
+.sidebar__tweetbtn:hover {
+  background: #0e87d2;
+}
+/* Profile */
+.sidebar__profile {
+  display: flex;
+  align-items: center;
+}
+.sidebar__img {
+  background-image: url("../images/Ramsey.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+}
+.sidebar__meta {
+  padding: 15px;
+}
+.sidebar__name {
+  font-weight: 800;
+}
+.sidebar__nav {
+  display: flex;
+  justify-content: space-around;
+}
+.sidebar__navtext {
+  display: none;
+}
+/* Hide Icons */
+.sidebar__containerright,
+.sidebar__tweetbtn,
+.sidebar__twittericon,
+.hide-icon {
+  display: none;
+}
+.sidebar {
+  border-top: 1px solid #8d8d8d;
+}
+.sidebar__containerleft {
+  margin-top: 10px;
+}
+@media screen and (min-width: 700px) {
+  .sidebar__navitem {
+    font-size: 24px;
+  }
+  .sidebar__containerleft {
+    margin-top: 0;
+  }
+  .sidebar {
+    order: 0;
+    flex: 0.2;
+    border-top: none;
+  }
+  .sidebar__navtext,
+  .sidebar__nav {
+    display: unset !important;
+  }
+  .sidebar {
+    padding: 20px 0 20px 25px;
+  }
+  /* Hide Icons */
+  .sidebar__containerright,
+  .sidebar__tweetbtn,
+  .sidebar__twittericon,
+  .hide-icon {
+    display: block;
+  }
 }

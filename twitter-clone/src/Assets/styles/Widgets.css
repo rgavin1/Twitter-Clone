@@ -1,0 +1,11 @@
+.widgets {
+    display: none;
+}
+
+@media screen and (min-width: 991px){
+    .widgets {
+        display: block;
+        flex: .3;
+        border-left: 1px solid #eee;
+    }
+}
