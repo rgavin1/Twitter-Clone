@@ -22,6 +22,7 @@
   border: none;
   font-size: 20px;
   padding: 13px 0;
+  width: 100%;
 }
 #tweetbox input[type="submit"] {
   align-self: flex-end;
@@ -59,24 +60,13 @@
 .feed__stickytop .svg-inline--fa {
   color: #1da1f294;
 }
-/* Profile Image */
-.feed__profileimg {
-  background-image: url("../images/Ramsey.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 60px;
-  min-width: 60px;
-  height: 60px;
-  align-self: baseline;
-  border-radius: 80%;
-}
 /* Form */
 .feed__mediaoptions ul {
   list-style: none;
   display: flex;
   justify-content: space-between;
   margin: 15px 0 0;
+  max-width: 220px;
 }
 .feed__mediaoptions ul li {
   padding: 5px;
@@ -114,23 +104,25 @@
 .feed_more {
   margin-left: auto;
 }
+.feed__profileimg,
 .feed__postimage {
   background-image: url("../images/Ramsey.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  min-width: 60px;
-  width: 60px;
-  height: 60px;
+  min-width: 40px;
+  width: 40px;
+  height: 40px;
   border-radius: 100px;
 }
 .feed_certificate {
   color: var(--primary-color);
   margin-right: 5px;
-  font-size: 18px;
+  font-size: 16px;
 }
 .feed_twitterhandle {
   margin-right: 5px;
+  font-size: 13px;
 }
 .feed__postcopy {
   padding: 15px 15px 15px 0;
@@ -143,7 +135,7 @@
 .feed_username {
   font-weight: 800;
   margin-right: 5px;
-  font-size: 20px;
+  font-size: 18px;
 }
 .feed > svg {
   position: fixed;
@@ -156,6 +148,44 @@
   color: #fff;
   display: block;
 }
+.feed__postmetadata {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+.feed__postmetadata li {
+  border-radius: 50px;
+  margin-top: 5px;
+  height: 40px;
+  width: 40px;
+  display: grid;
+  place-items: center;
+}
+.feed__postmetadata li:nth-child(1):hover,
+.feed__postmetadata li:nth-child(4):hover {
+  color: var(--primary-color-light);
+  background: #1da1f22e;
+}
+.feed__postmetadata li:nth-child(2):hover {
+  color: lightgreen;
+  background: #90ee9040;
+}
+.feed__postmetadata li:nth-child(3):hover {
+  color: #ee90eb;
+  background: #ee90eb47;
+}
+.feed__mediaoptions {
+  width: 100%;
+}
+@media screen and (min-width: 500px) {
+  /* Profile Image */
+  .feed__profileimg,
+  .feed__postimage {
+    width: 60px !important;
+    min-width: 60px !important;
+    height: 60px !important;
+  }
+}
 @media screen and (min-width: 768px) {
   #tweetbox input[type="submit"] {
     display: block;
@@ -164,11 +194,12 @@
     display: none;
   }
   .feed__stickytop {
-    padding: 38px 20px 20px;
+    padding: 15px 20px 20px;
   }
 }
-/* @media screen and (min-width: 991px) {
+
+@media screen and (min-width: 1024px) {
   .feed {
     flex: 0.7;
   }
-} */
+}
