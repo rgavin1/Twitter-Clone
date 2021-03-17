@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCertificate, faRetweet } from "@fortawesome/free-solid-svg-icons";
 import { faCommentAlt, faHeart, faShareSquare } from '@fortawesome/free-regular-svg-icons';
 
-const Post = ({ name, handle, certified, retweets }) => {
+const Post = ({ name, handle, certified, retweets, likes, comments, media }) => {
   return (
     <div className="feed__post">
       <div className="feed__postimage"></div>
@@ -23,14 +23,14 @@ const Post = ({ name, handle, certified, retweets }) => {
         </div>
         <div className="feed__postmedia">
           <img
-            src="https://i.guim.co.uk/img/media/ac2077e647fdb7e60e14a83a40a69021f5394ce1/0_138_4100_2460/master/4100.jpg?width=620&quality=45&auto=format&fit=max&dpr=2&s=a938e28f47e9e5474722b732f3372b9e"
+            src={`${media}`}
             alt=""
           />
         </div>
         <ul className="feed__postmetadata">
           <li title="Reply"><FontAwesomeIcon icon={faCommentAlt} /><span>{retweets}</span></li>
-          <li title="Retweet"><FontAwesomeIcon icon={faRetweet} /></li>
-          <li title="Like"><FontAwesomeIcon icon={faHeart} /></li>
+          <li title="Retweet"><FontAwesomeIcon icon={faRetweet} /><span>{retweets}</span></li>
+          <li title="Like"><FontAwesomeIcon icon={faHeart} /><span>{likes}</span></li>
           <li title="Share"><FontAwesomeIcon icon={faShareSquare} /></li>
         </ul>
       </div>
