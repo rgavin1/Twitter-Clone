@@ -1,17 +1,22 @@
-  import firebase from 'firebase';
-  
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyATyGGRn4ZxS7ytsbmRf8xLnuiBG-vAGHw",
-    authDomain: "twitter-clone-a783d.firebaseapp.com",
-    projectId: "twitter-clone-a783d",
-    storageBucket: "twitter-clone-a783d.appspot.com",
-    messagingSenderId: "449172069298",
-    appId: "1:449172069298:web:481ec901b6a60f3572a2ab"
-  };
+  import firebase from 'firebase/app';
+  import 'firebase/firebase-firestore';
+
+  require('dotenv').config();
+
+
+  console.log(process.env);
+
+
+const firebaseConfig = {
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  databaseURL: process.env.REACT_APP_databaseURL,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId
+};
   // Initialize Firebase
-  const firebaseApp = firebase.initializeApp(firebaseConfig);
+  firebase.initializeApp(firebaseConfig);
 
-  const database = firebaseApp.firestore();
-
-  export default database;
+  export default firebase;

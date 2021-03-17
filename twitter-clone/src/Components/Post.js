@@ -3,17 +3,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCertificate, faRetweet } from "@fortawesome/free-solid-svg-icons";
 import { faCommentAlt, faHeart, faShareSquare } from '@fortawesome/free-regular-svg-icons';
 
-const Post = () => {
+const Post = ({ name, handle, certified, retweets }) => {
   return (
     <div className="feed__post">
       <div className="feed__postimage"></div>
       <div className="feed__postdata">
         <div className="feed__posttitle">
-          <span className="feed_username">Ramsey</span>
-          <span className="feed_certificate">
+          <span className="feed_username">{name}</span>
+          { certified && <span className="feed_certificate">
             <FontAwesomeIcon icon={faCertificate} />
-          </span>
-          <span className="feed_twitterhandle">@Ramseyu90wr0fw2h</span>
+          </span>}
+          <span className="feed_twitterhandle">{handle}</span>
           <span className="feed_time">3h</span>
           <span className="feed_more">...</span>
         </div>
@@ -28,7 +28,7 @@ const Post = () => {
           />
         </div>
         <ul className="feed__postmetadata">
-          <li title="Reply"><FontAwesomeIcon icon={faCommentAlt} /></li>
+          <li title="Reply"><FontAwesomeIcon icon={faCommentAlt} /><span>{retweets}</span></li>
           <li title="Retweet"><FontAwesomeIcon icon={faRetweet} /></li>
           <li title="Like"><FontAwesomeIcon icon={faHeart} /></li>
           <li title="Share"><FontAwesomeIcon icon={faShareSquare} /></li>
