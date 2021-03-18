@@ -11,10 +11,10 @@ const Feed = ({ posts }) => {
                 <StickyTop />
                 <TweetBox />
                 { posts.map(post => {
-                    return <Post name={post.User} handle={post.Handle} certified={post.Certified} retweets={post.retweets} likes={post.likes} comments={post.comments} media={post.media} />
+                    return <Post name={post.User} handle={post.Handle} certified={post.Certified} copy={post.copy} retweets={post.retweets} likes={post.likes} comments={post.comments} media={post.media} />
                 }) }
                 <FontAwesomeIcon icon={faFeatherAlt} />
             </div>
 }
 
-export default Feed; 
+export default Feed;

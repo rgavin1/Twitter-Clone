@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCertificate, faRetweet } from "@fortawesome/free-solid-svg-icons";
 import { faCommentAlt, faHeart, faShareSquare } from '@fortawesome/free-regular-svg-icons';
 
-const Post = ({ name, handle, certified, retweets, likes, comments, media }) => {
+const Post = ({ name, handle, certified, copy, retweets, likes, comments, media }) => {
   return (
     <div className="feed__post">
       <div className="feed__postimage"></div>
@@ -17,10 +17,7 @@ const Post = ({ name, handle, certified, retweets, likes, comments, media }) => 
           <span className="feed_time">3h</span>
           <span className="feed_more">...</span>
         </div>
-        <div className="feed__postcopy">
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu.
-        </div>
+        <div className="feed__postcopy">{copy}</div>
         <div className="feed__postmedia">
           <img
             src={`${media}`}
