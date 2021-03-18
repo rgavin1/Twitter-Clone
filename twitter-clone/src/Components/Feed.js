@@ -13,47 +13,6 @@ const Feed = ({ posts }) => {
                 { posts.map(post => {
                     return <Post name={post.User} handle={post.Handle} certified={post.Certified} retweets={post.retweets} likes={post.likes} comments={post.comments} media={post.media} />
                 }) }
-                {/* Post */}
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
                 <FontAwesomeIcon icon={faFeatherAlt} />
             </div>
 }
