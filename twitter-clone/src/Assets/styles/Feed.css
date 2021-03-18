@@ -166,16 +166,30 @@
 .feed__postmetadata li span {
   font-size: 12px;
 }
-.feed__postmetadata li:nth-child(1):hover,
-.feed__postmetadata li:nth-child(4):hover {
+.feed__postmetadata li svg {
+  padding: 10px;
+  border-radius: 20px;
+}
+.feed__postmetadata li:nth-child(1):hover svg,
+.feed__postmetadata li:nth-child(4):hover svg {
   color: var(--primary-color-light);
   background: #1da1f22e;
 }
-.feed__postmetadata li:nth-child(2):hover {
+.feed__postmetadata li:nth-child(1):hover span,
+.feed__postmetadata li:nth-child(4):hover span {
+  color: var(--primary-color-light);
+}
+.feed__postmetadata li:nth-child(2):hover span {
+  color: lightgreen;
+}
+.feed__postmetadata li:nth-child(2):hover svg {
   color: lightgreen;
   background: #90ee9040;
 }
-.feed__postmetadata li:nth-child(3):hover {
+.feed__postmetadata li:nth-child(3):hover span {
+  color: #ee90eb;
+}
+.feed__postmetadata li:nth-child(3):hover svg {
   color: #ee90eb;
   background: #ee90eb47;
 }
