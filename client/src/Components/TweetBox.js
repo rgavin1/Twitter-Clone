@@ -2,19 +2,12 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faImage, faChartBar, faSmile, faCalendarAlt } from '@fortawesome/free-regular-svg-icons';
 import { faGift } from '@fortawesome/free-solid-svg-icons';
-import firebase from 'firebase/app';
 
 const TweetBox = () => {
     const [ tweet, setTweet ] = useState('');
 
     function handleSubmit (e){
         e.preventDefault();
-        firebase.firestore().collection('posts').add({
-            User: "Ramsey",
-            copy: tweet
-        }).then(() => {
-            setTweet('')
-        })
     }
     function handleChange (e) {
         setTweet(e.currentTarget.value);
