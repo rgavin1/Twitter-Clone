@@ -1,10 +1,11 @@
 import React from 'react';
-import '../Assets/styles/Widgets.css';
 import { TwitterTweetEmbed } from 'react-twitter-embed';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
-const Widgets = () => {
+import '../assets/styles/Widgets.css';
+
+const Widgets: React.FC = () => {
     return <div className="widgets">
         <div className="widgets__stickytop">
             <form>

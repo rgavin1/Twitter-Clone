@@ -1,23 +1,24 @@
-import React, { useState } from 'react';
+import React, { Dispatch, SetStateAction, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faImage, faChartBar, faSmile, faCalendarAlt } from '@fortawesome/free-regular-svg-icons';
 import { faGift } from '@fortawesome/free-solid-svg-icons';
 
-const TweetBox = () => {
-    const [tweet, setTweet] = useState('');
+const TweetBox: React.FC<{ tweets: any[], setTweets: Dispatch<SetStateAction<any>> }> = ({ tweets, setTweets }) => {
+    const [message, setMessage] = useState();
 
     function handleSubmit(e: any) {
         e.preventDefault();
+        setTweets([message, ...tweets])
     }
     function handleChange(e: any) {
-        setTweet(e.currentTarget.value);
+        setMessage(e.currentTarget.value);
     }
 
     return <div className="feed__tweetbox">
         <div className="feed__profileimg"></div>
         <form id="tweetbox" onSubmit={handleSubmit}>
             <div className="feed__mediaoptions">
-                <input className="tweetinput" placeholder="What's happening?" value={tweet} onChange={handleChange} />
+                <input className="tweetinput" placeholder="What's happening?" value={message} onChange={handleChange} />
                 <ul>
                     <li title="Media"><FontAwesomeIcon icon={faImage} /></li>
                     <li title="GIF"><FontAwesomeIcon icon={faGift} /></li>

@@ -1,17 +1,13 @@
+import React from 'react';
 import './App.css';
-import Sidebar from './components/Sidebar';
-import Feed from './components/Feed';
-import Widgets from './components/Widgets';
-import React, { useState } from 'react';
+
+import { Feed, Widgets, Sidebar } from './components';
 
 const App: React.FC = () => {
-  const [posts, setPosts] = useState([]);
-
-
   return (
     <div className="app">
       <Sidebar />
-      <Feed posts={posts} />
+      <Feed />
       <Widgets />
     </div>
   );
