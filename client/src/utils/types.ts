@@ -2,7 +2,7 @@ export type Tweet = {
     id: string;
     name: string;
     handle: string;
-    certified: string;
+    certified: boolean;
     copy: string;
     retweets: string;
     likes: string;

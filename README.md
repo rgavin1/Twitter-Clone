@@ -4,10 +4,11 @@
 ## Why?
 - I want to learn:
     - Node
-    - Express
+    - [Express](https://expressjs.com/en/starter/basic-routing.html)
     - Database
     - SQL
-    - Hooks
+    - React Hooks
+    - Custom Hooks
     - Client/Server setup
     - HTTP Protocol
     - REST
@@ -20,4 +21,6 @@
     - Components
     - Typescript
     - HTML
+    - Axios
+    - [React-Bootstrap](https://react-bootstrap.github.io/)
 ## What 
