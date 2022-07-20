@@ -13,5 +13,11 @@
     - REST
     - POSTGRES
     - Firebase hosting
-    
+    - Testing
+    - Mock Service Worker
+    - File Structure
+    - CSS (BEM)
+    - Components
+    - Typescript
+    - HTML
 ## What 

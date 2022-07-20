@@ -1,4 +1,5 @@
 export type Tweet = {
+    id: string;
     name: string;
     handle: string;
     certified: string;

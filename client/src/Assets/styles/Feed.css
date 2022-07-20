@@ -4,29 +4,34 @@
   height: 100%;
   overflow-y: scroll;
 }
+
 ::-webkit-scrollbar {
-  width: 0; /* Remove scrollbar space */
-  background: transparent; /* Optional: just make scrollbar invisible */
+  width: 0;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
 }
+
 /* Optional: show position indicator in red */
 ::-webkit-scrollbar-thumb {
   background: transparent;
 }
+
 /* TweetBox */
 #tweetbox {
   display: flex;
   width: 100%;
   padding: 0 15px 15px 15px;
 }
+
 .tweetinput {
   border: none;
   font-size: 20px;
   padding: 13px 0;
   width: 100%;
 }
+
 #tweetbox input[type="submit"] {
-  align-self: flex-end;
-  margin-left: auto;
   background: var(--primary-color-light);
   border: none;
   border-radius: 100px;
@@ -37,11 +42,13 @@
   cursor: pointer;
   display: none;
 }
+
 .feed__tweetbox {
   display: flex;
   padding: 15px 15px 0;
   border-bottom: 10px solid #eee;
 }
+
 /* Stick Top */
 .feed__stickytop {
   display: flex;
@@ -54,34 +61,40 @@
   top: 0;
   z-index: 100;
 }
+
 .feed__stickytop h1 {
   font-size: 20px;
 }
+
 .feed__stickytop .svg-inline--fa {
   color: #1da1f294;
 }
+
 /* Form */
 .feed__mediaoptions ul {
   list-style: none;
   display: flex;
-  justify-content: space-between;
   margin: 15px 0 0;
-  max-width: 220px;
 }
+
 .feed__mediaoptions ul li {
   padding: 5px;
   display: grid;
   place-items: center;
   border-radius: 46px;
-  width: 24px;
-  height: 24px;
   font-size: 20px;
   cursor: pointer;
   color: var(--primary-color-light);
 }
+
 .feed__mediaoptions ul li:hover {
   background: #1da1f226;
 }
+
+#tweet_button:hover {
+  background: none;
+}
+
 /* Post */
 .feed__post {
   display: flex;
@@ -90,20 +103,25 @@
   background: transparent;
   transition: background 0.1s linear;
 }
+
 .feed__post:hover {
   background: #eee;
   cursor: pointer;
 }
+
 .feed__postdata {
   padding-left: 15px;
 }
+
 .feed__posttitle {
   display: flex;
   align-items: center;
 }
+
 .feed_more {
   margin-left: auto;
 }
+
 .feed__profileimg,
 .feed__postimage {
   background-image: url("../images/Ramsey.png");
@@ -115,29 +133,35 @@
   height: 40px;
   border-radius: 100px;
 }
+
 .feed_certificate {
   color: var(--primary-color);
   margin-right: 5px;
   font-size: 16px;
 }
+
 .feed_twitterhandle {
   margin-right: 5px;
   font-size: 13px;
 }
+
 .feed__postcopy {
   padding: 15px 15px 15px 0;
   text-transform: capitalize;
 }
+
 .feed__postmedia img {
   width: 100%;
   border-radius: 10px;
 }
+
 .feed_username {
   font-weight: 800;
   margin-right: 5px;
   font-size: 18px;
 }
-.feed > svg {
+
+.feed>svg {
   position: fixed;
   top: 75%;
   left: 79%;
@@ -148,11 +172,13 @@
   color: #fff;
   display: block;
 }
+
 .feed__postmetadata {
   display: flex;
   justify-content: space-between;
   list-style: none;
 }
+
 .feed__postmetadata li {
   border-radius: 50px;
   margin-top: 5px;
@@ -163,40 +189,51 @@
   align-items: center;
   gap: 5px;
 }
+
 .feed__postmetadata li span {
   font-size: 12px;
 }
+
 .feed__postmetadata li svg {
   padding: 10px;
   border-radius: 20px;
 }
+
 .feed__postmetadata li:nth-child(1):hover svg,
 .feed__postmetadata li:nth-child(4):hover svg {
   color: var(--primary-color-light);
   background: #1da1f22e;
 }
+
 .feed__postmetadata li:nth-child(1):hover span,
 .feed__postmetadata li:nth-child(4):hover span {
   color: var(--primary-color-light);
 }
+
 .feed__postmetadata li:nth-child(2):hover span {
   color: lightgreen;
 }
+
 .feed__postmetadata li:nth-child(2):hover svg {
   color: lightgreen;
   background: #90ee9040;
 }
+
 .feed__postmetadata li:nth-child(3):hover span {
   color: #ee90eb;
 }
+
 .feed__postmetadata li:nth-child(3):hover svg {
   color: #ee90eb;
   background: #ee90eb47;
 }
+
 .feed__mediaoptions {
   width: 100%;
 }
+
 @media screen and (min-width: 500px) {
+
   /* Profile Image */
   .feed__profileimg,
   .feed__postimage {
@@ -205,13 +242,16 @@
     height: 60px !important;
   }
 }
+
 @media screen and (min-width: 768px) {
   #tweetbox input[type="submit"] {
     display: block;
   }
-  .feed > svg {
+
+  .feed>svg {
     display: none;
   }
+
   .feed__stickytop {
     padding: 15px 20px 20px;
   }
