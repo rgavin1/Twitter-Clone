@@ -75,6 +75,7 @@
   list-style: none;
   display: flex;
   margin: 15px 0 0;
+  padding-left: 0;
 }
 
 .feed__mediaoptions ul li {
@@ -122,9 +123,12 @@
   margin-left: auto;
 }
 
+.feed__profileimg {
+  background-image: url("../images/Ramsey.png");
+}
+
 .feed__profileimg,
 .feed__postimage {
-  background-image: url("../images/Ramsey.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

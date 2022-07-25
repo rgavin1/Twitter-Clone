@@ -1,14 +1,21 @@
-import React, { Dispatch, SetStateAction, useState } from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faImage, faChartBar, faSmile, faCalendarAlt } from '@fortawesome/free-regular-svg-icons';
 import { faGift } from '@fortawesome/free-solid-svg-icons';
+import { usePosts } from '../hooks';
+import { postServices } from '../services/posts';
 
-const TweetBox: React.FC<{ setTweets: Dispatch<SetStateAction<any>> }> = ({ setTweets }) => {
-    const [tweet, setTweet] = useState();
+const TweetBox: React.FC<{ setTweets: (prev: any) => void; }> = ({ setTweets }) => {
+    const { setIsLoading } = usePosts();
 
-    const handleSubmit = (e: any) => {
+    const [tweet, setTweet] = useState("");
+
+    const handleSubmit = async (e: any) => {
         e.preventDefault();
-        setTweets((tweets: any) => tweets && [tweet, ...tweets])
+        setIsLoading(true);
+        const data = await postServices.createSinglePost(tweet);
+        setTweets(data);
+        setIsLoading(false);
     }
     const handleChange = (e: any) => {
         setTweet(e.currentTarget.value);

@@ -15,7 +15,7 @@
     - POSTGRES
     - Firebase hosting
     - Testing
-    - Mock Service Worker
+    - [Mock Service Worker](https://mswjs.io/)
     - File Structure
     - CSS (BEM)
     - Components
