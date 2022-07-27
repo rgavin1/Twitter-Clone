@@ -15,7 +15,11 @@
     - POSTGRES
     - Firebase hosting
     - Testing
-    - [Mock Service Worker](https://mswjs.io/)
+        - Mocking
+        - [Mock Service Worker](https://mswjs.io/)
+        - [Arrange, Act, Assert](https://docs.telerik.com/devtools/justmock/basic-usage/arrange-act-assert)
+        - React testing library
+        - Jest
     - File Structure
     - CSS (BEM)
     - Components
@@ -23,4 +27,5 @@
     - HTML
     - Axios
     - [React-Bootstrap](https://react-bootstrap.github.io/)
+
 ## What 

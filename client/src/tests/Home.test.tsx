@@ -1,4 +1,5 @@
 import { render, act, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import App from '../App';
 
 /**
@@ -21,14 +22,43 @@ describe('<TwitterClone />', () => {
             await render(<App />);
         })
     }
+    // get element function
+    const submitATweetButton = () => screen.getByRole("button", { name: /Tweet/i });
+    const inputElement = () => screen.getByPlaceholderText("What's happening?");
 
     describe('<TwitterBox />', () => {
+        it("confirms tweet button disabled by default", async () => {
+            // Arrange
+            await renderTwitterApplication();
+            // Assert
+            expect(inputElement()).not.toHaveValue();
+            expect(submitATweetButton().getAttribute("aria-disabled")).toBe("true");
+        });
+
         it("should enable submit button when input has text", async () => {
+            // Arrange
+            const expectedTweet = "this is my first post";
             await renderTwitterApplication()
+            const input = inputElement();
+            const sendTweetButton = submitATweetButton();
+            // Act
+            userEvent.type(input, expectedTweet);
+            // Assert
+            expect(input).toHaveValue(expectedTweet);
+            expect(sendTweetButton.getAttribute("aria-disabled")).toBe("false");
+        })
 
-            screen.debug(undefined, Infinity);
-
-            expect(true).toBe(true)
+        it("confirms the input element and twitter is set to back to default", async () => {
+            // Arrange
+            const expectedTweet = "this is my first post{selectall}{del}";
+            await renderTwitterApplication()
+            const input = inputElement();
+            const sendTweetButton = submitATweetButton();
+            // Act
+            userEvent.type(input, expectedTweet);
+            // Assert
+            expect(input).not.toHaveValue(expectedTweet);
+            expect(sendTweetButton.getAttribute("aria-disabled")).toBe("true");
         })
     })
 

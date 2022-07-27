@@ -18,7 +18,10 @@ const TweetBox: React.FC<{ setTweets: (prev: any) => void; }> = ({ setTweets }) 
         setIsLoading(false);
     }
     const handleChange = (e: any) => {
-        setTweet(e.currentTarget.value);
+        const { value } = e.currentTarget;
+        if (!!value && value.length === 0) return;
+        setTweet(value);
+        return;
     }
 
     return <div className="feed__tweetbox">
@@ -32,7 +35,7 @@ const TweetBox: React.FC<{ setTweets: (prev: any) => void; }> = ({ setTweets }) 
                     <li title="Polls"><FontAwesomeIcon icon={faChartBar} /></li>
                     <li title="Emoji"><FontAwesomeIcon icon={faSmile} /></li>
                     <li title="Schedule"><FontAwesomeIcon icon={faCalendarAlt} /></li>
-                    <li id="tweet_button" style={{ marginLeft: "auto" }} title="Tweet"><input style={{ background: tweet ? "#1da1f2" : "#1da1f294" }} type="submit" value="Tweet" /></li>
+                    <li id="tweet_button" style={{ marginLeft: "auto" }} title="Tweet"><input aria-disabled={!!(tweet.length === 0)} style={{ background: tweet ? "#1da1f2" : "#1da1f294" }} type="submit" value="Tweet" /></li>
                 </ul>
             </div>
         </form>
