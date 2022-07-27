@@ -18,11 +18,9 @@ describe('<TwitterClone />', () => {
     // render component
     const renderTwitterApplication = async () => {
         // eslint-disable-next-line testing-library/no-unnecessary-act
-        await act(async () => {
-            await render(<App />);
-        })
+        await act(async () => { await render(<App />) })
     }
-    // get element function
+    // function to find elements
     const submitATweetButton = () => screen.getByRole("button", { name: /Tweet/i });
     const inputElement = () => screen.getByPlaceholderText("What's happening?");
 
