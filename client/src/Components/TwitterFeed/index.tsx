@@ -12,9 +12,8 @@ import useFetchPosts from '../../hooks/useFetchPosts';
 
 
 const Feed: React.FC = () => {
-    const { tweets, isLoading, setIsLoading } = useFetchPosts()
+    const { tweets, isLoading } = useFetchPosts()
 
-    const [tweetsx, setTweets] = useState<any[]>([]);
     // const [isLoading, setIsLoading] = useState(false);
 
     return <div className="feed" style={{ position: 'relative' }}>

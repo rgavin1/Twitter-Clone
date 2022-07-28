@@ -1,0 +1,16 @@
+{
+  "name": "Twitter-Clone",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:rgavin1/Twitter-Clone.git",
+  "author": "Ramsey Gavin <44215916+rgavin1@users.noreply.github.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "cd server/ && yarn start",
+    "client": "cd client/ yarn && yarn start",
+    "start": "concurrently \"yarn run dev\" \"yarn client\" "
+  },
+  "devDependencies": {
+    "concurrently": "^7.3.0"
+  }
+}
