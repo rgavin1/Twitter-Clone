@@ -1,6 +1,6 @@
 import { render, act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import App from '../App';
+import { Home } from '../../../pages';
 
 /**
  * Best Practice for test
@@ -15,16 +15,16 @@ import App from '../App';
  *   - Used to group common tests
  */
 describe('<TwitterClone />', () => {
-    // render component
+    // render the application
     const renderTwitterApplication = async () => {
         // eslint-disable-next-line testing-library/no-unnecessary-act
-        await act(async () => { await render(<App />) })
+        await act(async () => { await render(<Home />) })
     }
     // function to find elements
     const submitATweetButton = () => screen.getByRole("button", { name: /Tweet/i });
     const inputElement = () => screen.getByPlaceholderText("What's happening?");
 
-    describe('<TwitterBox />', () => {
+    describe('<TweeterTextArea />', () => {
         it("confirms tweet button disabled by default", async () => {
             // Arrange
             await renderTwitterApplication();
@@ -33,10 +33,10 @@ describe('<TwitterClone />', () => {
             expect(submitATweetButton().getAttribute("aria-disabled")).toBe("true");
         });
 
-        it("should enable submit button when input has text", async () => {
+        it("should enable submit button when textarea has content", async () => {
             // Arrange
-            const expectedTweet = "this is my first post";
             await renderTwitterApplication()
+            const expectedTweet = "this is my first post";
             const input = inputElement();
             const sendTweetButton = submitATweetButton();
             // Act
@@ -60,10 +60,10 @@ describe('<TwitterClone />', () => {
         })
     })
 
-    describe("<Feed />", () => {
-        it("first test", async () => {
-            await renderTwitterApplication()
-            expect(true).toBe(true)
-        })
-    })
+    // describe("<Feed />", () => {
+    //     it("first test", async () => {
+    //         await renderTwitterApplication()
+    //         expect(true).toBe(true)
+    //     })
+    // })
 })

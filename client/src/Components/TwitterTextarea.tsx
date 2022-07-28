@@ -2,20 +2,14 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faImage, faChartBar, faSmile, faCalendarAlt } from '@fortawesome/free-regular-svg-icons';
 import { faGift } from '@fortawesome/free-solid-svg-icons';
-import { usePosts } from '../hooks';
 import { postServices } from '../services/posts';
 
-const TweetBox: React.FC<{ setTweets: (prev: any) => void; }> = ({ setTweets }) => {
-    const { setIsLoading } = usePosts();
-
+const TwitterTextarea: React.FC = () => {
     const [tweet, setTweet] = useState("");
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
-        setIsLoading(true);
-        const data = await postServices.createSinglePost(tweet);
-        setTweets(data);
-        setIsLoading(false);
+        await postServices.createSinglePost(tweet);
     }
     const handleChange = (e: any) => {
         const { value } = e.currentTarget;
@@ -42,4 +36,4 @@ const TweetBox: React.FC<{ setTweets: (prev: any) => void; }> = ({ setTweets }) 
     </div>;
 }
 
-export default TweetBox;
+export default TwitterTextarea;

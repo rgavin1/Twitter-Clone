@@ -4,37 +4,25 @@ import { Tweet } from '../utils/types';
 import { postServices } from '../services/posts';
 
 const useFetchPosts = () => {
-    const [tweets, setTweets] = useState<Tweet[]>([]);
+    const [error, setError] = useState<any | null>(null);
     const [isLoading, setIsLoading] = useState(false);
-
-    const refresh = async () => {
-        setIsLoading(true);
-        try {
-            const data = await postServices.getAllPosts();
-            setTweets(data);
-        } catch (error) {
-            console.log('error', error)
-        }
-        setIsLoading(false);
-    }
-
-    // FIXME: This is not working 
-    // const createPost = async (rawPost: string) => {
-    //     setIsLoading(true);
-    //     try {
-    //         const data = await postServices.createSinglePost(rawPost);
-    //         setTweets(data);
-    //     } catch (error) {
-    //         console.log(error)
-    //     }
-    //     setIsLoading(false);
-    // }
+    const [tweets, setTweets] = useState<Tweet[]>([]);
 
     useEffect(() => {
-        refresh();
+        (async () => {
+            setIsLoading(true);
+            try {
+                const data = await postServices.getAllPosts();
+                setTweets(data);
+            } catch (e) {
+                setError(e);
+            } finally {
+                setIsLoading(false);
+            }
+        })();
     }, []);
 
-    return { tweets, isLoading, setIsLoading, refresh }
+    return { tweets, isLoading, error, setIsLoading }
 }
 
 export default useFetchPosts

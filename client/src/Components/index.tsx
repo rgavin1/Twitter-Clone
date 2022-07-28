@@ -1,4 +1,4 @@
-export { default as Feed } from './Feed';
+export { default as Feed } from './TwitterFeed';
 export { default as Nav } from './Nav';
 export { default as Widgets } from './Widgets';
 export { default as Spinner } from './Spinner'
