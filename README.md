@@ -26,6 +26,7 @@
     - Typescript
     - HTML
     - Axios
+    - Supertest API testing
     - [React-Bootstrap](https://react-bootstrap.github.io/)
 
 ## What 
