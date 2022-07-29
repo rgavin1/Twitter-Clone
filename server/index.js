@@ -1,15 +1,6 @@
-const cors = require("cors");
-const express = require("express");
-const uuid = require("uuid");
-
-const app = express();
-const port = 5000;
-
+import app from './app';
+import { PORT } from './constants';
 const mockdata = require('./mockdata.json');
-
-app.use(cors());
-// used in-place of body-parser
-app.use(express.json());
 
 app.get('/', (req, res) => {
   res.send('Welcome to Twitter Clone API - built by Ramsey Gavin')
@@ -31,6 +22,6 @@ app.post('/posts', (req, res) => {
   res.status(201).json({ message: "Post created" })
 })
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
+app.listen(PORT, () => {
+    console.log(`Example app listening on port ${PORT}`)
 })
