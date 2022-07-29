@@ -8,7 +8,6 @@ import Comment from "./Modals/Comment";
 
 const Post: React.FC<{ post: Tweet }> = ({ post }) => {
     const [showModal, setShowModal] = useState(false);
-
     const toggleModal = () => setShowModal(!showModal)
     return (
         <>
