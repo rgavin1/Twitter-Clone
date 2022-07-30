@@ -7,12 +7,12 @@ const app = createServer();
 
 // default path
 app.get('/', (_req: any, res: any) => {
-    res.json({ message: 'Welcome to Twitter Clone API - built by Ramsey Gavin' })
+    res.send({ message: 'Welcome to Twitter Clone API - built by Ramsey Gavin' })
 })
 
 // Posts
 app.get('/posts', (_req: any, res: any) => {
-    res.status(200).json({ data: mockdata })
+    res.send({ data: mockdata })
 })
 
 // app.post('/posts', (req: any, res: any) => {
