@@ -16,6 +16,7 @@ const MOCKREQUESTBODY = {
     timestamp: ""
 }
 
+
 const getAllPosts = async (): Promise<Tweet[]> => {
     const { data } = await axios.get(REQUEST_URL);
     return data;
