@@ -27,3 +27,5 @@ jobs:
         run: |
           echo Installing Node
           yarn install
+          yarn build
+          yarn test
