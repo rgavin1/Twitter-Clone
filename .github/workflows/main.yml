@@ -29,4 +29,4 @@ jobs:
       - name: Now Building the application
         run: cd client/ && yarn build
       - name: Now Testing the application
-        run: yarn test
+        run: cd client/ && yarn test
