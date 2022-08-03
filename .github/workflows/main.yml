@@ -23,6 +23,8 @@ jobs:
         with:
           node-version: 16
       - name: Installing Dependencies
-        run: echo Installing Node && yarn install
-      - name: Building and Testing
-        run: yarn build && yarn test
+        run: yarn install
+      - name: Now Building the application
+        run: yarn build
+      - name: Now Testing the application
+        run: yarn test
