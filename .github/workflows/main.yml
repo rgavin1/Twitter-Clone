@@ -23,7 +23,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: Installing Node version 16
-        run: |
-          echo Installing Node
-          yarn install
+      - name: Installing Dependencies
+        run: echo Installing Node && yarn install
+      - name: Building and Testing
+        run: yarn build && yarn test
