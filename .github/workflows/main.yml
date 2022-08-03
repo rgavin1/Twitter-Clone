@@ -22,5 +22,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: Install Node
+      - name: Installing Node version 16
         run: echo Installing Node && yarn install
+      - name: Running Twitter Clone Application Unit tests
+        run: echo Running Twitter Clone Application Unit tests && yarn tests
+      # - name: Building Twitter Clone Application
+      #   run: echo Building Twitter Clone Application && yarn install
