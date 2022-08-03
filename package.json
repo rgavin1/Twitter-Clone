@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "cd server/ && yarn start",
     "client": "cd client/ yarn && yarn start",
+    "build": "cd client/ && yarn build",
     "start": "concurrently \"yarn run dev\" \"yarn client\" "
   },
   "devDependencies": {
