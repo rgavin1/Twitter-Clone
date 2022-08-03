@@ -23,5 +23,4 @@ jobs:
         with:
           node-version: 16
       - name: Install Node
-        run: echo Installing Node
-        run: yarn install
+        run: echo Installing Node && yarn install
