@@ -26,7 +26,3 @@ jobs:
           node-version: 16
       - name: Installing Dependencies
         run: cd client/ && yarn install
-      - name: Now Building the application
-        run: yarn build
-      - name: Now Testing the application
-        run: yarn test
