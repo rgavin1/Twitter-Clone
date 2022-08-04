@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFeatherAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react';
 import { Spinner } from '..';
 import '../../assets/styles/Feed.css';
-
-import StickyTop from '../StickyTop'
-import Post from '../Post';
-import TwitterTextarea from '../TwitterTextarea';
-import { Tweet } from '../../utils/types';
 import useFetchPosts from '../../hooks/useFetchPosts';
+import { Tweet } from '../../utils/types';
+import Post from '../Post';
+import StickyTop from '../StickyTop';
+import TwitterTextarea from '../TwitterTextarea';
 
 
 const Feed: React.FC = () => {

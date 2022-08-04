@@ -1,8 +1,8 @@
 export type Tweet = {
     id: string;
     userid: string;
-    name: string;
-    handle: string;
+    username: string;
+    userhandle: string;
     isCertified: boolean;
     post: string;
     retweets: string;

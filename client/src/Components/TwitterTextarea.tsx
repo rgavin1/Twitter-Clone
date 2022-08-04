@@ -6,18 +6,16 @@ import { postServices } from '../services/posts';
 
 const TwitterTextarea: React.FC = () => {
     const [tweet, setTweet] = useState("");
-
-    const handleSubmit = async (e: any) => {
-        e.preventDefault();
-        await postServices.createSinglePost(tweet);
-    }
     const handleChange = (e: any) => {
         const { value } = e.currentTarget;
         if (!!value && value.length === 0) return;
         setTweet(value);
         return;
     }
-
+    const handleSubmit = async (e: any) => {
+        e.preventDefault();
+        await postServices.createSinglePost(tweet);
+    }
     return <div className="feed__tweetbox">
         <div className="feed__profileimg"></div>
         <form id="tweetbox" onSubmit={handleSubmit}>

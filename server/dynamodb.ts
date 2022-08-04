@@ -45,3 +45,5 @@ const twitterPostsServices = {
     addOrUpdatePost,
     deletePostById
 }
+
+export default twitterPostsServices;
