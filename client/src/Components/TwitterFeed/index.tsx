@@ -13,13 +13,10 @@ import useFetchPosts from '../../hooks/useFetchPosts';
 
 const Feed: React.FC = () => {
     const { tweets, isLoading } = useFetchPosts()
-
-    // const [isLoading, setIsLoading] = useState(false);
-
     return <div className="feed" style={{ position: 'relative' }}>
         <StickyTop />
         <TwitterTextarea />
-        {!isLoading ? tweets?.map((post: Tweet, i) =>
+        {!isLoading ? tweets.map((post: Tweet, i) =>
             <Post key={i} post={post} />
         ) : <Spinner />}
         <FontAwesomeIcon icon={faFeatherAlt} />

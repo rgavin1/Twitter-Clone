@@ -3,7 +3,6 @@ import uuid from "uuid";
 import createServer from './utils/createServer';
 
 require("dotenv").config();
-
 // set-up server
 const app = createServer();
 

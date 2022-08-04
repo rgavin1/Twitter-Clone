@@ -4,6 +4,11 @@ import { Button, Modal, Form, Image, Container, Row, Col } from 'react-bootstrap
 const Comment: React.FC<{ showModal: boolean; toggleModal: () => void; }> = ({ showModal, toggleModal }) => {
     const [comment, setComment] = useState("");
     const handleInput = (e: any) => setComment(e.target.value);
+
+    const handleUserComment = () => {
+        console.log('comment', comment)
+        // Post Comment here
+    }
     return (
         <Modal size='lg' show={showModal} onHide={toggleModal}>
             <Modal.Header style={{ marginRight: 'auto' }} closeButton />
@@ -39,7 +44,7 @@ const Comment: React.FC<{ showModal: boolean; toggleModal: () => void; }> = ({ s
                         <Col xs={2}></Col>
                         <Col xs={10} style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                             <div>Other buttons</div>
-                            <Button disabled={!!!comment} variant="primary">Reply</Button>
+                            <Button onClick={handleUserComment} disabled={!!!comment} variant="primary">Reply</Button>
                         </Col>
                     </Row>
                 </Container>
