@@ -3,9 +3,9 @@ import { Tweet } from "../utils/types";
 
 const REQUEST_URL = "http://localhost:5000/posts";
 const MOCKREQUESTBODY = {
-    userid: "",
-    name: "Ramsey",
-    handle: "@Ramseyu90wr0fw2h",
+    userid: "ef6c487d-61d3-4a2c-b268-dd59834d1e7b",
+    username: "Ramsey",
+    userhandle: "@Ramseyu90wr0fw2h",
     isCertified: true,
     post: "",
     retweets: 0,
