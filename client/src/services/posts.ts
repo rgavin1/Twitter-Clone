@@ -21,8 +21,8 @@ const MOCKREQUESTBODY = {
 
 
 const getAllPosts = async (): Promise<Tweet[]> => {
-    const { data } = await axios.get(REQUEST_URL);
-    return data;
+    const { data: { data } } = await axios.get(REQUEST_URL);
+    return data as Tweet[];
 }
 
 const createSinglePost = async (content: string): Promise<Tweet[]> => {

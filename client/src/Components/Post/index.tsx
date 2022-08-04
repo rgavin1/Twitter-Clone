@@ -36,6 +36,16 @@ const Post: React.FC<{ post: Tweet }> = ({ post }) => {
                         <li title="Like"><FontAwesomeIcon icon={faHeart} /><span>{post.likes}</span></li>
                         <li title="Share"><FontAwesomeIcon icon={faShareSquare} /></li>
                     </ul>
+                    {/* Add Comment Section */}
+                    <div>
+                        <p>New Comment here - say something</p>
+                        <ul className="feed__postmetadata">
+                            <li title="Reply" onClick={toggleModal}><FontAwesomeIcon icon={faCommentAlt} /><span>{post.retweets}</span></li>
+                            <li title="Retweet"><FontAwesomeIcon icon={faRetweet} /><span>{post.retweets}</span></li>
+                            <li title="Like"><FontAwesomeIcon icon={faHeart} /><span>{post.likes}</span></li>
+                            <li title="Share"><FontAwesomeIcon icon={faShareSquare} /></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             {showModal && <Comment {...{ showModal, toggleModal }} />}
