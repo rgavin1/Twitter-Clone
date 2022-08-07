@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faImage, faChartBar, faSmile, faCalendarAlt } from '@fortawesome/free-regular-svg-icons';
 import { faGift } from '@fortawesome/free-solid-svg-icons';
-import { postServices } from '../services/posts';
+import { postServices } from '../../services/posts';
 
-const TwitterTextarea: React.FC = () => {
+const TwitterTextarea: React.FC<{ refreshFeed: () => void }> = ({ refreshFeed }) => {
     const [tweet, setTweet] = useState("");
     const handleChange = (e: any) => {
         const { value } = e.currentTarget;
@@ -15,6 +15,8 @@ const TwitterTextarea: React.FC = () => {
     const handleSubmit = async (e: any) => {
         e.preventDefault();
         await postServices.createSinglePost(tweet);
+        setTweet("");
+        refreshFeed();
     }
     return <div className="feed__tweetbox">
         <div className="feed__profileimg"></div>

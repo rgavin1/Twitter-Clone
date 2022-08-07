@@ -15,11 +15,11 @@ const Post: React.FC<{ post: Tweet }> = ({ post }) => {
                 <div className="feed__postimage" style={{ backgroundImage: `url(${post.image})` }}></div>
                 <div className="feed__postdata">
                     <div className="feed__posttitle">
-                        <span className="feed_username">{post.name}</span>
+                        <span className="feed_username">{post.username}</span>
                         {post.isCertified && <span className="feed_certificate">
                             <FontAwesomeIcon icon={faCertificate} />
                         </span>}
-                        <span className="feed_twitterhandle">{post.handle}</span>
+                        <span className="feed_twitterhandle">{post.userhandle}</span>
                         <span className="feed_time">3h</span>
                         <span className="feed_more">...</span>
                     </div>

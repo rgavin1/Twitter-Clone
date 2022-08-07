@@ -1,13 +1,14 @@
 // src/mocks/handlers.js
 import { rest } from 'msw'
 
-export const handlers = [
-    // Handles a GET /user request
+const postServices = [
     rest.get('http://localhost:5000/posts', (req, res, ctx) => {
         return res(
             ctx.status(200),
-            ctx.json(
-                [{
+            ctx.json({
+                data:
+                    [
+                        {
                     comments: 72,
                     handle: "apyott0",
                     id: "ae8bfa4c-fc92-48d2-9a8a-8f467f3824d4",
@@ -29,8 +30,18 @@ export const handlers = [
                     name: "Lauralee",
                     post: "Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.\n\nProin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
                     retweets: 479,
-                }]
+                    }]
+            }
             )
         )
+    }),
+
+    rest.post('http://localhost:5000/posts', (req, res, ctx) => {
+        console.log('res: POST', res)
     })
+]
+
+
+export const handlers = [
+    ...postServices
 ]

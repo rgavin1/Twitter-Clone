@@ -7,7 +7,7 @@ import useFetchPosts from '../../hooks/useFetchPosts';
 import { Tweet } from '../../utils/types';
 import Post from '../Post';
 import StickyTop from '../StickyTop';
-import TwitterTextarea from '../TwitterTextarea';
+import TwitterTextarea from '../TweetTextarea';
 
 
 const Feed: React.FC = () => {
